@@ -71,3 +71,23 @@ public:
         return ans;
     }
 };
+
+// tc : O(m-1) or O(n-1)
+// sc : O(1)
+
+// using combination NCr formula
+class Solution {
+public:
+    int uniquePaths(int m, int n) {
+        int N = m + n - 2;
+        int r = m - 1;
+
+        double ans = 1.0;
+
+        for(int i=1;i<=r;i++) {
+            ans = ans * (N-r+i)/i;
+        }
+
+        return (int)ans;
+    }
+};
